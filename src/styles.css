@@ -5,3 +5,8 @@ h1 {
   color: blueviolet;
   text-align: center;
 }
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
