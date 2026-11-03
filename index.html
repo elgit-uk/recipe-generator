@@ -7,7 +7,25 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Welcome to my AI Powered Recipe Generator</h1>
+    <header>
+      <h1>AI Powered Recipe Generator</h1>
+    </header>
+
+    <main>
+      <form id="key-word">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Enter an ingridient (e.g., chicken) ..."
+          required
+          autocomplete="off"
+        />
+        <button id="submit-button" type="button">Generate a recipe 🧂</button>
+      </form>
+
+      <section id="recipe-display"></section>
+    </main>
+
     <footer>
       This project was coded by
       <a href="https://github.com/elgit-uk" target="_blank">Ellie</a>. Open
