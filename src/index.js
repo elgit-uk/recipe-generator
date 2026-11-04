@@ -1,3 +1,11 @@
+function displayRecipe(response) {
+  console.log(response.data.answer);
+  let searchingMessage = document.querySelector("#searching");
+  searchingMessage.innerHTML = "";
+  let recipe = document.querySelector("#recipe");
+  recipe.innerHTML = `${response.data.answer}`;
+}
+
 function searchForRecipe(event) {
   event.preventDefault();
 
@@ -5,16 +13,18 @@ function searchForRecipe(event) {
   let ingredient = searchInput.value;
 
   new Typewriter("#searching", {
-    strings: `Searching for a recipe with ${ingredient}`,
+    strings: `A recipe with ${ingredient}`,
     autoStart: true,
-    delay: 125,
+    delay: 100,
     cursor: "🥘",
   });
 
-  let ingredients = document.querySelector("#ingredients");
-  ingredients.innerHTML = "The required ingredients will appear here ...";
-  let instructions = document.querySelector("#instructions");
-  instructions.innerHTML = "Step by step instructions ...";
+  let apiKey = "2d3ffca2b4824o0a82a3f230545c636t";
+  let context = "generate a short and simple recipe.";
+  let prompt = `please generate a recipe using the ${ingredient}. Return the recipe formatting in clean HTML text.`;
+
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+  axios.get(apiURL).then(displayRecipe);
 }
 
 let searchForm = document.querySelector("#search-bar");
