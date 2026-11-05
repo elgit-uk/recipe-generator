@@ -2,7 +2,7 @@ function displayRecipe(response) {
   console.log(response.data.answer);
   let searchingMessage = document.querySelector("#searching");
   searchingMessage.innerHTML = "";
-  let recipe = document.querySelector("#recipe");
+
   recipe.innerHTML = `${response.data.answer}`;
 }
 
@@ -11,7 +11,10 @@ function searchForRecipe(event) {
 
   let searchInput = document.querySelector("#search-input");
   let ingredient = searchInput.value;
-
+  let recipeDisplay = document.querySelector("#recipe-display");
+  recipeDisplay.classList.remove("hide");
+  let recipe = document.querySelector("#recipe");
+  recipe.innerHTML = "";
   new Typewriter("#searching", {
     strings: `A recipe with ${ingredient}`,
     autoStart: true,

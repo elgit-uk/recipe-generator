@@ -10,7 +10,11 @@
   </head>
   <body>
     <header>
-      <h1>AI Powered Recipe Generator</h1>
+      <h1>AI Powered Recipe Generator<span class="blink">🥗</span></h1>
+      <p>
+        Welcome to your personal kitchen assistant!<br />
+        Enter one key ingredient below to get a simple recipe.
+      </p>
     </header>
 
     <main>
@@ -18,14 +22,14 @@
         <input
           type="text"
           id="search-input"
-          placeholder="Enter an ingridient (e.g., chicken) ..."
+          placeholder="Enter an ingredient (e.g., egg, chicken or potato...)"
           required
           autocomplete="off"
         />
         <button id="submit-button" type="submit">Get a recipe</button>
       </form>
 
-      <section id="recipe-display">
+      <section class="hide" id="recipe-display">
         <h3 id="searching"></h3>
         <div id="recipe"></div>
       </section>

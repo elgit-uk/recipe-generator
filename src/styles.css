@@ -5,21 +5,33 @@ body {
 h1 {
   color: #885df1;
   text-align: center;
-  text-align: center;
-  font-weight: 800;
-  font-size: 36px;
+  font-weight: 600;
+  font-size: 30px;
   line-height: 1.5;
 }
+p {
+  text-align: center;
 
+  line-height: 1.5;
+}
 #search-bar {
-  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
+  padding: 15px;
   border-radius: 10px;
   gap: 5px;
-
+  background-color: whitesmoke;
   display: flex;
   align-items: center;
   max-width: 80%;
   margin: auto;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1s step-start 0s 3 forwards;
 }
 
 #search-input {
@@ -42,6 +54,11 @@ h1 {
   border-radius: 50px;
   box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
 }
+
+.hide {
+  display: none;
+}
+
 #recipe-display {
   color: #272044;
   border: 2px solid #885df1;
@@ -54,6 +71,7 @@ h1 {
 }
 
 footer {
+  text-align: center;
   font-size: small;
   position: static;
   bottom: 20px;
